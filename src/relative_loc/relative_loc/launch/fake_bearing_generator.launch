@@ -1,0 +1,4 @@
+<launch>
+    <param name="/use_sim_time" value="true"/>
+    <node name="fake_bearing_generator" pkg="relative_loc" type="fake_bearing_generator" output="screen" args="$(find relative_loc)/config/utils.yaml" />
+</launch>

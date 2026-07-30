@@ -1,0 +1,23 @@
+%YAML:1.0
+
+drone_id:
+  - id: 0
+    is_lidar: 0
+  - id: 5
+    is_lidar: 0
+  - id: 6
+    is_lidar: 1
+
+bearing_rate: 2.0
+bearing_noise_stddev: 0.1
+outlier_ratio: 0.4
+
+vision_drone_id_and_odom_gt_topic:
+  - id: 0
+    odom_gt_topic: "/vrpn_client_node/hjy0/pose"
+    init_pos: [0.0, 0.0, 0.0]
+  - id: 5
+    odom_gt_topic: "/vrpn_client_node/hjy5/pose"
+    init_pos: [0.0, 1.375, 0.0]
+
+odom_gt_publish_interval: 0.08   # 10 Hz

@@ -1,0 +1,16 @@
+bags/
+*.bag
+*.bag.active
+*.db3
+*.mcap
+*.sqlite3
+
+.agents/
+.codex/
+
+.vscode/
+**/.vscode/
+
+__pycache__/
+*.pyc
+*.pyo

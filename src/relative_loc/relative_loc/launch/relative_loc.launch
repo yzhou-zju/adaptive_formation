@@ -1,0 +1,7 @@
+<launch>
+    <arg name="odom_topic" default="/self_odom"/>
+    <param name="/use_sim_time" value="false"/>
+    <node name="relative_loc" pkg="relative_loc" type="relative_loc_node" output="screen" args="$(find relative_loc)/config/hyperparams.yaml">
+        <remap from="~self_odom" to="$(arg odom_topic)"/>
+    </node>
+</launch>

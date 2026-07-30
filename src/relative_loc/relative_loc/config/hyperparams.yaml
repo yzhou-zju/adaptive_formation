@@ -1,0 +1,123 @@
+%YAML:1.0
+
+drone_id_and_uwb_ext:
+  - id: 0
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 1
+    is_lidar: 0
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 2
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 3
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 4
+    is_lidar: 0
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 5
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 6
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 7
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 8
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 9
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 10
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 11
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 12
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 13
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 14
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 15
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 16
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 17
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 18
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+  - id: 19
+    is_lidar: 1
+    uwb_ext: [0.0, 0.0, 0.0]
+
+uwb_bias: 0.0
+consider_uwb_extrinsic: 0
+uwb_anchor_id_and_position:
+  - id: 250
+    position: [25.0, 25.0, 25.0]
+  - id: 520
+    position: [52.0, 52.0, 52.0]
+
+revised_odom_topic: "revised_odom"
+swarm_revised_odom_topic: "swarm_revised_odom"
+
+swarm_odom_topic: "/bridge/broadcast_odom_from_planner"
+swarm_odom_freq: 3.0
+
+distance_measurement_topic: "/bridge/distance_meas"
+distance_measurement_freq: 3.0
+
+enable_bearing: 0
+bearing_measurement_topic: "/bridge/bearing_meas"
+bearing_measurement_freq: 3.0
+
+drift_from_center_topic: "/bridge/drift_to_edges"
+drift_to_edges_topic: "/drift_to_edges"
+
+# Debug topics
+swarm_dist_est_topic: "/debug_distance_est"
+swarm_dist_meas_topic: "/debug_distance_meas"
+swarm_bearing_diff_topic: "/debug_bearing_diff"
+swarm_bearing_diff_before_opt_topic: "/debug_bearing_diff_before_opt"
+drift_after_lpf_topic: "/debug_drift_after_lpf"
+
+optimize_z: 0
+optimize_yaw: 1
+sliding_window_length: 4                   # In seconds
+optimize_per_N_meas: 1
+
+prior_cost_weight: 0.0
+regularization_cost_weight: 0.1
+distance_cost_weight: 10.0
+bearing_cost_weight: 2.0
+max_abs_yaw: 20.0                          # In degrees
+
+distance_outlier_threshold: 1.0
+max_deanonymization_bearing_angle: 45.0    # In degrees
+huber_threshold: 1.0
+
+cutoff_frequency_revised_p: 1.0
+max_delta_revised_p: 0.013
+cutoff_frequency_drift_p: 1.0
+max_delta_drift_p: 0.06
+cutoff_frequency_drift_yaw: 0.13
+max_delta_drift_yaw: 0.3                   # In degrees
+
+ceres_verbosity_level: 0                   # 0: Silent  1: Quiet    2: Verbose
+glog_severity_level: 0                     # 0: Info    1: Warning  2: Error    3: Fatal
+publish_debug_topics: 1
+custom_debug_output: 0
+init_from_swarm_info: 1
+swarm_info_topic: "/bridge/Swarm"

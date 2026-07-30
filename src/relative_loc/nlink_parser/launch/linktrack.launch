@@ -1,0 +1,7 @@
+<launch>
+    <arg name="port_name" default="$(env UWB_SERIAL_PORT)"/>
+    <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen">
+        <param name="port_name" value="$(arg port_name)" />
+        <param name="baud_rate" value="921600" />
+    </node>
+</launch>

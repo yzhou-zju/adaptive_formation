@@ -1,0 +1,188 @@
+<launch>
+
+
+<!-- <arg name="bag_drone_0" default="/home/ztr/formation_bag/0819/0/8_success.bag" />
+<arg name="bag_drone_1" default="/home/ztr/formation_bag/0819/1/8_success.bag" />
+<arg name="bag_drone_2" default="/home/ztr/formation_bag/0819/2/8_success.bag" />
+<arg name="bag_drone_3" default="/home/ztr/formation_bag/0819/3/8_success.bag" />
+<arg name="bag_drone_4" default="/home/ztr/formation_bag/0819/4/8_success.bag" />
+<arg name="bag_drone_5" default="/home/ztr/formation_bag/0819/5/8_success.bag" />
+<arg name="bag_drone_6" default="/home/ztr/formation_bag/0819/6/8_success.bag" />
+<arg name="bag_drone_7" default="/home/ztr/formation_bag/0819/7/8_success.bag" /> -->
+<!-- <arg name="bag_drone_0" default="/home/ztr/formation_bag/0818/0/8_complete.bag" />
+<arg name="bag_drone_1" default="/home/ztr/formation_bag/0818/1/8_complete.bag" />
+<arg name="bag_drone_2" default="/home/ztr/formation_bag/0818/2/8_complete.bag" />
+<arg name="bag_drone_3" default="/home/ztr/formation_bag/0818/3/8_complete.bag" />
+<arg name="bag_drone_4" default="/home/ztr/formation_bag/0818/4/8_complete.bag" />
+<arg name="bag_drone_5" default="/home/ztr/formation_bag/0818/5/8_complete.bag" />
+<arg name="bag_drone_6" default="/home/ztr/formation_bag/0818/6/8_complete.bag" />
+<arg name="bag_drone_7" default="/home/ztr/formation_bag/0818/7/8_complete.bag" /> -->
+<arg name="bag_drone_0" default="/home/ztr/formation_bag/0824/five/d0/5_success.bag" />
+<arg name="bag_drone_1" default="/home/ztr/formation_bag/0824/five/d1/5_success.bag" />
+<arg name="bag_drone_2" default="/home/ztr/formation_bag/0824/five/d2/5_success.bag" />
+<arg name="bag_drone_3" default="/home/ztr/formation_bag/0824/five/d3/5_success.bag" />
+<arg name="bag_drone_4" default="/home/ztr/formation_bag/0824/five/d4/5_success.bag" />
+
+
+
+    <node pkg="rosbag" name="drone_0" type="play" output="screen" args="-l  $(arg bag_drone_0)">
+        <remap from="/corrected_imu_propagate_odom" to="/drone0/corrected_imu_propagate_odom"/>
+        <remap from="/vins_estimator/imu_propagate" to="/drone0/vins_estimator/imu_propagate"/>
+        <remap from="/vins_estimator/path" to="/drone0/vins_estimator/path"/>
+        <remap from="/ground_height_measurement" to="/drone0/ground_height_measurement"/>
+        <remap from="/broadcast_localgoal_from_planner" to="/drone0/broadcast_localgoal_from_planner"/>
+        <remap from="/nlink_linktrack_nodeframe3" to="/drone0/nlink_linktrack_nodeframe3"/>
+    </node>
+
+    <node pkg="rosbag" name="drone_1" type="play" output="screen" args="-l    $(arg bag_drone_1)">
+        <remap from="/corrected_imu_propagate_odom" to="/drone1/corrected_imu_propagate_odom"/>
+        <remap from="/vins_estimator/imu_propagate" to="/drone1/vins_estimator/imu_propagate"/>
+        <remap from="/ground_height_measurement" to="/drone1/ground_height_measurement"/>
+        <remap from="/vins_estimator/path" to="/drone1/vins_estimator/path"/>
+        <remap from="/nlink_linktrack_nodeframe3" to="/drone1/nlink_linktrack_nodeframe3"/>
+    </node>
+
+    <node pkg="rosbag" name="drone_2" type="play" output="screen" args="-l  $(arg bag_drone_2)">
+        <remap from="/corrected_imu_propagate_odom" to="/drone2/corrected_imu_propagate_odom"/>
+        <remap from="/vins_estimator/imu_propagate" to="/drone2/vins_estimator/imu_propagate"/>
+        <remap from="/ground_height_measurement" to="/drone2/ground_height_measurement"/>
+        <remap from="/vins_estimator/path" to="/drone2/vins_estimator/path"/>
+        <remap from="/nlink_linktrack_nodeframe3" to="/drone2/nlink_linktrack_nodeframe3"/>
+    </node>
+
+    <node pkg="rosbag" name="drone_3" type="play" output="screen" args="-l  $(arg bag_drone_3)">
+        <remap from="/corrected_imu_propagate_odom" to="/drone3/corrected_imu_propagate_odom"/>
+        <remap from="/vins_estimator/imu_propagate" to="/drone3/vins_estimator/imu_propagate"/>
+        <remap from="/ground_height_measurement" to="/drone3/ground_height_measurement"/>
+        <remap from="/vins_estimator/path" to="/drone3/vins_estimator/path"/>
+        <remap from="/nlink_linktrack_nodeframe3" to="/drone3/nlink_linktrack_nodeframe3"/>
+    </node>
+
+    <node pkg="rosbag" name="drone_4" type="play" output="screen" args="-l  $(arg bag_drone_4)">
+        <remap from="/corrected_imu_propagate_odom" to="/drone4/corrected_imu_propagate_odom"/>
+        <remap from="/vins_estimator/imu_propagate" to="/drone4/vins_estimator/imu_propagate"/>
+        <remap from="/ground_height_measurement" to="/drone4/ground_height_measurement"/>
+        <remap from="/vins_estimator/path" to="/drone4/vins_estimator/path"/>
+        <remap from="/nlink_linktrack_nodeframe3" to="/drone4/nlink_linktrack_nodeframe3"/>
+    </node>
+
+    <!-- <node pkg="rosbag" name="drone_5" type="play" output="screen" args="-l   $(arg bag_drone_5)">
+        <remap from="/corrected_imu_propagate_odom" to="/drone5/corrected_imu_propagate_odom"/>
+        <remap from="/vins_estimator/imu_propagate" to="/drone5/vins_estimator/imu_propagate"/>
+        <remap from="/ground_height_measurement" to="/drone5/ground_height_measurement"/>
+        <remap from="/vins_estimator/path" to="/drone5/vins_estimator/path"/>
+        <remap from="/nlink_linktrack_nodeframe3" to="/drone5/nlink_linktrack_nodeframe3"/>
+    </node>
+    <node pkg="rosbag" name="drone_6" type="play" output="screen" args="-l   $(arg bag_drone_6)">
+        <remap from="/corrected_imu_propagate_odom" to="/drone6/corrected_imu_propagate_odom"/>
+        <remap from="/vins_estimator/imu_propagate" to="/drone6/vins_estimator/imu_propagate"/>
+        <remap from="/ground_height_measurement" to="/drone6/ground_height_measurement"/>
+        <remap from="/vins_estimator/path" to="/drone6/vins_estimator/path"/>
+        <remap from="/nlink_linktrack_nodeframe3" to="/drone6/nlink_linktrack_nodeframe3"/>
+    </node>
+    <node pkg="rosbag" name="drone_7" type="play" output="screen" args="-l  $(arg bag_drone_7)">
+        <remap from="/corrected_imu_propagate_odom" to="/drone7/corrected_imu_propagate_odom"/>
+        <remap from="/vins_estimator/imu_propagate" to="/drone7/vins_estimator/imu_propagate"/>
+        <remap from="/ground_height_measurement" to="/drone7/ground_height_measurement"/>
+        <remap from="/vins_estimator/path" to="/drone7/vins_estimator/path"/>
+        <remap from="/nlink_linktrack_nodeframe3" to="/drone7/nlink_linktrack_nodeframe3"/>
+    </node> -->
+
+
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ego_planner)/launch/default.rviz" required="true" /> -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ego_planner)/launch/bag_default.rviz" required="true" />
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ego_planner)/launch/default_kino_debug.rviz" required="true" /> -->
+
+
+    <!-- uav simulator -->
+    <node pkg="odom_visualization" name="drone_0_odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/drone0/corrected_imu_propagate_odom"/>
+        <param name="color/a" value="1.0"/>    
+        <param name="color/r" value="0.0"/>        
+        <param name="color/g" value="0.0"/>        
+        <param name="color/b" value="0.0"/>       
+        <param name="covariance_scale" value="100.0"/>       
+        <param name="robot_scale" value="0.5"/>
+        <param name="tf45" value="false"/>
+        <param name="drone_id" value="0"/>
+    </node>
+    <node pkg="odom_visualization" name="drone_1_odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/drone1/corrected_imu_propagate_odom"/>
+        <param name="color/a" value="1.0"/>    
+        <param name="color/r" value="0.0"/>        
+        <param name="color/g" value="0.0"/>        
+        <param name="color/b" value="0.0"/>       
+        <param name="covariance_scale" value="100.0"/>       
+        <param name="robot_scale" value="0.5"/>
+        <param name="tf45" value="false"/>
+        <param name="drone_id" value="0"/>
+    </node>
+    <node pkg="odom_visualization" name="drone_2_odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/drone2/corrected_imu_propagate_odom"/>
+        <param name="color/a" value="1.0"/>    
+        <param name="color/r" value="0.0"/>        
+        <param name="color/g" value="0.0"/>        
+        <param name="color/b" value="0.0"/>       
+        <param name="covariance_scale" value="100.0"/>       
+        <param name="robot_scale" value="0.5"/>
+        <param name="tf45" value="false"/>
+        <param name="drone_id" value="0"/>
+    </node>
+    <node pkg="odom_visualization" name="drone_3_odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/drone3/corrected_imu_propagate_odom"/>
+        <param name="color/a" value="1.0"/>    
+        <param name="color/r" value="0.0"/>        
+        <param name="color/g" value="0.0"/>        
+        <param name="color/b" value="0.0"/>       
+        <param name="covariance_scale" value="100.0"/>       
+        <param name="robot_scale" value="0.5"/>
+        <param name="tf45" value="false"/>
+        <param name="drone_id" value="0"/>
+    </node>
+    <node pkg="odom_visualization" name="drone_4_odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/drone4/corrected_imu_propagate_odom"/>
+        <param name="color/a" value="1.0"/>    
+        <param name="color/r" value="0.0"/>        
+        <param name="color/g" value="0.0"/>        
+        <param name="color/b" value="0.0"/>       
+        <param name="covariance_scale" value="100.0"/>       
+        <param name="robot_scale" value="0.5"/>
+        <param name="tf45" value="false"/>
+        <param name="drone_id" value="0"/>
+    </node>
+    <!-- <node pkg="odom_visualization" name="drone_5_odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/drone5/corrected_imu_propagate_odom"/>
+        <param name="color/a" value="1.0"/>    
+        <param name="color/r" value="0.0"/>        
+        <param name="color/g" value="0.0"/>        
+        <param name="color/b" value="0.0"/>       
+        <param name="covariance_scale" value="100.0"/>       
+        <param name="robot_scale" value="0.5"/>
+        <param name="tf45" value="false"/>
+        <param name="drone_id" value="0"/>
+    </node>
+    <node pkg="odom_visualization" name="drone_6_odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/drone6/corrected_imu_propagate_odom"/>
+        <param name="color/a" value="1.0"/>    
+        <param name="color/r" value="0.0"/>        
+        <param name="color/g" value="0.0"/>        
+        <param name="color/b" value="0.0"/>       
+        <param name="covariance_scale" value="100.0"/>       
+        <param name="robot_scale" value="0.5"/>
+        <param name="tf45" value="false"/>
+        <param name="drone_id" value="0"/>
+    </node>
+    <node pkg="odom_visualization" name="drone_7_odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/drone7/corrected_imu_propagate_odom"/>
+        <param name="color/a" value="1.0"/>    
+        <param name="color/r" value="0.0"/>        
+        <param name="color/g" value="0.0"/>        
+        <param name="color/b" value="0.0"/>       
+        <param name="covariance_scale" value="100.0"/>       
+        <param name="robot_scale" value="0.5"/>
+        <param name="tf45" value="false"/>
+        <param name="drone_id" value="0"/>
+    </node> -->
+
+
+</launch>

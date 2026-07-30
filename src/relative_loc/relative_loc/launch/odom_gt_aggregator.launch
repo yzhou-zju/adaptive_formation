@@ -1,0 +1,4 @@
+<launch>
+    <param name="/use_sim_time" value="true"/>
+    <node name="odom_gt_aggregator" pkg="relative_loc" type="odom_gt_aggregator" output="screen" args="$(find relative_loc)/config/utils.yaml" />
+</launch>

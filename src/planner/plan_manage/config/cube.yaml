@@ -1,0 +1,135 @@
+size_swarm : 30 #系统当中集群数量
+vis_hor : 8.0 #可视距离
+max_graph_aware : 10.43 #最大团误差阈值0.43
+vis_step : 20
+#tray aware
+
+t1_relative_pos_0 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_1 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_2 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_3 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_4 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_5 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_6 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_7 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_8 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_9 :  {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_10 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_11 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_12 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_13 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_14 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_15 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_16 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_17 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_18 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_19 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_20 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_21 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_22 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_23 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_24 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_25 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_26 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_27 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_28 : {x: 0.0,    y: 0.0,   z: 0.0}
+t1_relative_pos_29 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_30 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_31 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_32 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_33 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_34 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_35 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_36 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_37 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_38 : {x: 0.0,    y: 0.0,   z: 0.0}
+# t1_relative_pos_39 : {x: 0.0,    y: 0.0,   z: 0.0}
+
+global_goal:
+  swarm_central_pos: {x: 25.0, y: 0.0, z: 0.0}
+  swarm_scale : 1.5
+
+# finite state machine
+fsm:
+  formation_error_clearance : 100.05 #0.05
+  aware_clearance : 10000 #100.0
+  softmax_aware_clearance : 100.33 #0.33  # only for regular hexagon = 1 / 7 * 2
+  ca_delta_t : 3.5
+  isuse_local_vel : true          # if consider the local goal velocity when calling global trakectory replanning
+  replan_trajectory_time : 0.05    # s, the max time of replanning trajectory
+  
+# back-end local trajectory optimization
+optimization:
+  formation_type: 1
+
+  # formation method:
+    # 0: (default) swarm-graph-based
+    # 1: leader-follow position-based
+    # 2: relative position-based
+    # 3: VRB formation control method
+  formation_method_type: 0
+  # optimization problem setting
+  constrain_points_perPiece: 4
+  # weight_obstacle     : 100000.0
+  # weight_swarm        : 100000.0
+  # weight_feasibility  : 100000.0
+  # weight_sqrvariance  : 100000.0
+  # weight_time         : 80.0
+  # weight_formation    : 10000.0
+
+  # weight_obstacle     : 50000.0
+  # weight_swarm        : 50000.0
+  # weight_feasibility  : 100000.0
+  # weight_sqrvariance  : 100000.0
+  # weight_time         : 80.0
+  # weight_formation    : 15000.0
+  weight_obstacle     : 5000.0
+  weight_swarm        : 5000.0
+  weight_feasibility  : 100.0
+  weight_sqrvariance  : 80.0
+  weight_time         : 80.0
+  weight_formation    : 330.0
+  weight_formation2   : 330.0
+  weight_graph        : 280.0
+
+  error_to_leader     : 0.01
+  use_graph           : true  
+  # avoidance threshold
+  obstacle_clearance  : 0.4
+  swarm_clearance     : 0.4
+  # fixed time step sampling
+  sampling_time_step  : 0.20
+  # three method of optimization
+  # enable_fix_step | enable_decouple_swarm_graph |  method
+  #     false       |             false           | icra2022
+  #     true        |             false           | fixed time step
+  #     true        |             true            | fixed time step + decouple local min of swarm-graph 
+  enable_fix_step             : true
+  enable_decouple_swarm_graph : true
+  
+  # only for real-world exp
+  is_opt_formation_z  : true
+  fixed_formation_z   : 0.5     # equal to the final goal_z !!!!!!
+
+
+# kinodynamic A*
+search:
+  reso_acc: 10.0
+  max_tau: 1.6
+  init_max_tau: 0.8
+  max_vel: 0.6
+  max_acc: 6.0
+  w_time: 500000.0  #时间软约束？
+  horizon: 10
+  lambda_heu: 5.0
+  resolution_astar: 0.2
+  time_resolution: 0.01
+  margin: 0.2
+  allocate_num: 10000000
+  check_num: 30
+  use_kino: false
+  # max_acc_z: 0.03
+  max_acc_z: 2.0
+  #修改地图密集程度，修改map的随机数id固定下来
+  # <arg name="planning_horizon" value="9" />  
+  # 注意hybridastar部分planning horizon影响local_pose修改为9
