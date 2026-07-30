@@ -4,11 +4,11 @@ ROS-based code and experiment assets for adaptive multi-UAV formation planning a
 
 ## Dataset
 
-The rosbag data is hosted on Hugging Face instead of GitHub:
+Only the rosbag files are hosted on Hugging Face:
 
 https://huggingface.co/datasets/ZhouYYYY/adaptive_formation
 
-`bags/` is excluded from this GitHub repository.
+The `bags/` directory is excluded from this GitHub repository.
 
 ## Repository Structure
 
