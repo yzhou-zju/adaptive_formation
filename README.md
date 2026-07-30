@@ -6,7 +6,7 @@ ROS-based code and experiment assets for adaptive multi-UAV formation planning a
 
 Only the rosbag files are hosted on Hugging Face:
 
-https://huggingface.co/datasets/ZhouYYYY/adaptive_formation
+https://huggingface.co/datasets/mmm1124/adaptive_formation
 
 The `bags/` directory is excluded from this GitHub repository.
 
