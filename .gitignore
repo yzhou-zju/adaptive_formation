@@ -6,6 +6,7 @@ bags/
 *.sqlite3
 
 .agents/
+.cache/
 .codex/
 
 .vscode/
